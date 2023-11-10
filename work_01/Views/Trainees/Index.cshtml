@@ -1,0 +1,44 @@
+﻿@model IEnumerable<work_01.Models.Trainee>
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<div class="row">
+    <div class="col">
+        <h2>Trainee Information</h2>
+        <div class="d-flex justify-content-end">
+            <a asp-action="Create" asp-controller="Trainees" class="btn btn-primary btn-sm mb-2"><i class="fa fa-plus"></i> Add New</a>
+        </div>
+    </div>
+    <table class="table table-bordered table-striped table-sm">
+        <thead>
+            <tr>
+                <th>@Html.DisplayNameFor(x => x.TraineeName)</th>
+                <th>@Html.DisplayNameFor(x => x.TraineeContact)</th>
+                <th>@Html.DisplayNameFor(x => x.TraineeEmail)</th>
+                <th>@Html.DisplayNameFor(x => x.BatchId)</th>
+                <th>Action</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var item in Model)
+            {
+                <tr>
+                    <td>@item.TraineeName</td>
+                    <td>@item.TraineeContact</td>
+                    <td>@item.TraineeEmail</td>
+                    <td>@item.Batch.BatchCode</td>
+                    <td>
+                        <a asp-action="Edit" asp-route-id="@item.TraineeId" asp-controller="Trainees" class="btn btn-success btn-sm"><i class="fa fa-edit"></i> Edit</a>
+                        <a asp-action="Delete" asp-route-id="@item.TraineeId" asp-controller="Trainees" class="btn btn-danger btn-sm"><i class="fa fa-trash"></i> Delete</a>
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
+
+</div>
+
+
+

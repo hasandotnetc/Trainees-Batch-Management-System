@@ -1,0 +1,34 @@
+﻿@model IEnumerable<work_01.Models.Batch>
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1>Batches List</h1>
+
+<div class="d-flex justify-content-end mb-2">
+    <a asp-action="Create" asp-controller="Batches" class="btn btn-primary"><i class="fa fa-plus"></i> Add New</a>
+</div>
+
+<table class="table table-bordered table-striped table-sm">
+    <thead>
+        <tr>
+            <th>BatchId</th>
+            <th>BatchCode</th>
+            <th>Action</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>@item.BatchId</td>
+                <td>@item.BatchCode</td>
+                <td>
+                    <a asp-action="Edit" asp-route-id="@item.BatchId" asp-controller="Batches" class="btn btn-success btn-sm"><i class="fa fa-edit"></i> Edit</a>
+                    <a asp-action="Delete" asp-route-id="@item.BatchId" asp-controller="Batches" class="btn btn-danger btn-sm"><i class="fa fa-trash"></i> Delete</a>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>
+

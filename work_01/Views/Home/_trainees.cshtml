@@ -1,0 +1,11 @@
+﻿@model IEnumerable<work_01.Models.Trainee>
+<table class="table table-bordered table-sm table-striped mt-2">
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>@item.TraineeName</td>
+            <td>@item.TraineeEmail</td>
+            <td>@item.TraineeContact</td>
+        </tr>
+    }
+</table>

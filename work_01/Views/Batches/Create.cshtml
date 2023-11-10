@@ -1,0 +1,26 @@
+﻿@model work_01.Models.Batch
+
+@{
+    ViewData["Title"] = "Create";
+}
+
+<h1>Create New Batch</h1>
+
+<div class="row">
+    <div class="col">
+        <form asp-action="Create" asp-controller="Batches">
+            <div class="row mb-2">
+                <label class="col-form-label col-2">BatchCode</label>
+                <div class="col-8">
+                    <input type="text" class="form-control form-control-sm" asp-for="BatchCode" />
+                </div>
+                <div class="col-10 offset-2">
+                    <input type="submit" value="Save" class="btn btn-success mt-2" />
+                </div>
+            </div>
+        </form>
+    </div>
+</div>
+
+
+
